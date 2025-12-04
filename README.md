@@ -79,13 +79,14 @@ pip install -r requirements.txt
 ## 📁 Project Structure
 
 ```
-├── streamlit_app.py          # Main app
-├── train_model.py            # Model training
-├── requirements.txt          # Dependencies
-├── fraud_model.pkl           # Trained model
-├── feature_columns.pkl       # Features
-├── customer_stats.pkl        # Customer data
-└── nova_pay_transactions.csv # Dataset
+├── streamlit_app.py                # Main app
+├── train_model.py                  # Model training
+├── requirements.txt                # Dependencies
+├── fraud_model.pkl                 # Trained model
+├── feature_columns.pkl             # Features
+├── customer_stats.pkl              # Customer data
+├── nova_pay_fraud_detection.ipynb  # Jupyter Notebook (EDA, models, top features)
+└── nova_pay_transactions.csv       # Dataset
 ```
 
 ## 🤖 How It Works
