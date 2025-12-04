@@ -48,7 +48,7 @@ plotly==5.18.0
 
 ## 🌐 Access on Streamlit Cloud
 
-Go to [share.streamlit.io](https://share.streamlit.io)
+Go to [streamlit.io](https://uncoverfraud.streamlit.app/)
 
 
 
