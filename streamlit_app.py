@@ -16,7 +16,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-from datetime import datetime
+from datetime import datetime, time
 import plotly.graph_objects as go
 import plotly.express as px
 
@@ -226,15 +226,15 @@ sample_type = st.sidebar.radio(
 if sample_type == "Low Risk Sample":
     default_values = {
         'customer_id': 'CUST_12345',
-        'amount_usd': 150.0,
+        'amount_usd': 1500.0,
         'fee': 5.0,
         'risk_score_internal': 0.01,
-        'ip_risk_score': 0.105,
+        'ip_risk_score': 0.05,
         'corridor_risk': 0.04,
-        'device_trust_score': 0.85,
+        'device_trust_score': 0.90,
         'txn_velocity_1h': 1,
         'txn_velocity_24h': 2,
-        'account_age_days': 100,
+        'account_age_days': 120,
         'chargeback_history_count': 0,
         'new_device': False,
         'location_mismatch': False
@@ -258,15 +258,15 @@ elif sample_type == "High Risk Sample":
 else:
     default_values = {
         'customer_id': 'CUST_12345',
-        'amount_usd': 1500.0,
+        'amount_usd': 5000.0,
         'fee': 15.0,
-        'risk_score_internal': 0.23,
-        'ip_risk_score': 0.36,
+        'risk_score_internal': 0.02,
+        'ip_risk_score': 0.09,
         'corridor_risk': 0.10,
-        'device_trust_score': 0.75,
+        'device_trust_score': 0.80,
         'txn_velocity_1h': 2,
         'txn_velocity_24h': 5,
-        'account_age_days': 120,
+        'account_age_days': 200,
         'chargeback_history_count': 0,
         'new_device': False,
         'location_mismatch': False
@@ -308,7 +308,8 @@ with col1:
     
     time = st.time_input(
         "Transaction Time",
-        value=datetime.now().time(),
+        # value=datetime.now().time(),
+        value=time(),
         help="Time of the transaction"
     )
     
@@ -358,15 +359,15 @@ with col2:
     txn_velocity_1h = st.number_input(
         "Transactions in Past Hour",
         min_value=-1,
-        max_value=20,
+        max_value=7,
         value=default_values['txn_velocity_1h'],
         help="Number of transactions in the past hour (-1 to 8)"
     )
     
     txn_velocity_24h = st.number_input(
         "Transactions in Past 24 Hours",
-        min_value=0,
-        max_value=50,
+        min_value=1,
+        max_value=9,
         value=default_values['txn_velocity_24h'],
         help="Number of transactions in the past 24 hours (0 to 9)"
     )
